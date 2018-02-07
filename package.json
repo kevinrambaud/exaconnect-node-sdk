@@ -1,0 +1,25 @@
+{
+  "name": "exaconnect-node-sdk",
+  "version": "0.0.1",
+  "description": "Exaconnect node.js SDK",
+  "main": "index.js",
+  "files": ["index.js", "lib/**/*.js"],
+  "scripts": {
+    "test": "nyc --reporter=html --reporter=text mocha \"lib/**/*.test.js\""
+  },
+  "author": "Kevin Rambaud <kevin.rambaud@gmail.com> (https://twitter.com/kevinrambaud)",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.17.0",
+    "eslint-config-airbnb-base": "^12.1.0",
+    "eslint-plugin-import": "^2.8.0",
+    "mocha": "^5.0.0",
+    "nyc": "^11.4.1"
+  },
+  "dependencies": {
+    "assert-plus": "^1.0.0",
+    "soap": "^0.23.0",
+    "soap-cookie": "^0.10.1"
+  }
+}
