@@ -3,7 +3,10 @@
   "version": "0.0.1",
   "description": "Exaconnect node.js SDK",
   "main": "index.js",
-  "files": ["index.js", "lib/**/*.js"],
+  "files": [
+    "index.js",
+    "lib/**/*.js"
+  ],
   "scripts": {
     "lint": "eslint --fix index.js \"lib/**/*.js\"",
     "precommit": "npm run lint && npm run test",
@@ -22,6 +25,7 @@
   "homepage": "https://github.com/kevinrambaud/exaconnect-node-sdk#readme",
   "devDependencies": {
     "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
     "eslint": "^4.17.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
