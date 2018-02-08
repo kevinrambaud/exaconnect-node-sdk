@@ -5,6 +5,9 @@
   "main": "index.js",
   "files": ["index.js", "lib/**/*.js"],
   "scripts": {
+    "lint": "eslint --fix index.js \"lib/**/*.js\"",
+    "precommit": "npm run lint && npm run test",
+    "prepush": "npm run lint && npm run test",
     "test": "nyc --reporter=html --reporter=text mocha \"lib/**/*.test.js\""
   },
   "repository": {
@@ -22,6 +25,7 @@
     "eslint": "^4.17.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
+    "husky": "^0.14.3",
     "mocha": "^5.0.0",
     "nyc": "^11.4.1",
     "sinon": "^4.2.2"
