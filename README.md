@@ -29,7 +29,9 @@ exaconnect
       client.getToken({ username: 'you@company.com', password: 'secret' })
     ])
   )
-  .then(([client, token]) => client.getOrderStatus(token, [502809]))
+  .then(([client, token]) =>
+    client.getOrderStatus({ token: token, orders: [502809] })
+  )
   .then(status => console.log('status:', status))
   .catch(err => console.error(err));
 ```
@@ -45,7 +47,10 @@ const exaconnect = require('exaconnect-node-sdk');
     username: 'you@company.com',
     password: 'secret'
   });
-  const status = await client.getOrderStatus(token, [502809]);
+  const status = await client.getOrderStatus({
+    token: token,
+    orders: [502809]
+  });
 
   console.log('status:', status);
 })().catch(err => console.error(err));
