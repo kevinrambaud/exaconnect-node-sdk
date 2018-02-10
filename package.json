@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "description": "Exaconnect node.js SDK",
   "main": "index.js",
-  "files": ["index.js", "lib/**/*.js"],
+  "files": [
+    "index.js",
+    "lib/**/*.js",
+    "!lib/**/*.test.js"
+  ],
   "scripts": {
     "coverage": "nyc report --reporter=lcovonly",
     "lint": "eslint --fix index.js \"lib/**/*.js\"",
@@ -37,6 +41,7 @@
   },
   "dependencies": {
     "assert-plus": "^1.0.0",
+    "joi": "^13.1.2",
     "soap": "^0.23.0",
     "soap-cookie": "^0.10.1"
   }
