@@ -2,6 +2,7 @@
 
 [![Travis](https://img.shields.io/travis/kevinrambaud/exaconnect-node-sdk.svg)](https://travis-ci.org/kevinrambaud/exaconnect-node-sdk)
 [![Styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
+[![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/kevinrambaud/exaconnect-node-sdk/master/LICENSE)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/631952378883f9a61a1a/test_coverage)](https://codeclimate.com/github/kevinrambaud/exaconnect-node-sdk/test_coverage)
 [![Maintainability](https://api.codeclimate.com/v1/badges/631952378883f9a61a1a/maintainability)](https://codeclimate.com/github/kevinrambaud/exaconnect-node-sdk/maintainability)
 
