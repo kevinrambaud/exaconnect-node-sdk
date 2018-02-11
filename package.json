@@ -3,16 +3,11 @@
   "version": "0.0.1",
   "description": "Exaconnect node.js SDK",
   "main": "index.js",
-  "files": [
-    "index.js",
-    "lib/**/*.js",
-    "!lib/**/*.test.js"
-  ],
+  "files": ["index.js", "lib/**/*.js", "!lib/**/*.test.js"],
   "scripts": {
     "coverage": "nyc report --reporter=lcovonly",
     "lint": "eslint --fix index.js \"lib/**/*.js\"",
     "precommit": "npm run lint && npm run test",
-    "prepush": "npm run lint && npm run test",
     "test": "nyc mocha \"lib/**/*.test.js\""
   },
   "repository": {
