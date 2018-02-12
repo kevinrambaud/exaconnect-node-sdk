@@ -19,6 +19,7 @@ Node.js SDK for exaconnect webservice (https://www.exaprint.fr/).
     * [setOrderStateAsFileTransferred](#setorderstateasfiletransferred)
     * [getOrderStatus](#getorderstatus)
     * [cancelOrder](#cancelorder)
+* [More examples](#more-examples)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -399,6 +400,10 @@ const exaconnect = require('exaconnect-node-sdk');
   console.log(cancelledOrder);
 })().catch(console.error);
 ```
+
+## More examples
+
+You can find more examples in the `examples` directory of this repository.
 
 ## Contributing
 
