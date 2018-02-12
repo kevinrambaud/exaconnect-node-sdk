@@ -15,6 +15,10 @@ Node.js SDK for exaconnect webservice (https://www.exaprint.fr/).
   * [Methods](#methods)
     * [getToken](#gettoken)
     * [createOrder](#createorder)
+    * [createOrderFromPartnerOrder](#createorderfrompartnerorder)
+    * [setOrderStateAsFileTransferred](#setorderstateasfiletransferred)
+    * [getOrderStatus](#getorderstatus)
+    * [cancelOrder](#cancelorder)
 * [Contributing](#contributing)
 * [License](#license)
 
@@ -34,6 +38,7 @@ Promise example :
 
 ```javascript
 const exaconnect = require('exaconnect-node-sdk');
+
 exaconnect
   .createClient()
   .then(client =>
@@ -68,6 +73,8 @@ const exaconnect = require('exaconnect-node-sdk');
 Promise example :
 
 ```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
 exaconnect
   .createClient()
   .then(client =>
@@ -154,6 +161,242 @@ const exaconnect = require('exaconnect-node-sdk');
   });
 
   console.log(order);
+})().catch(console.error);
+```
+
+#### createOrderFromPartnerOrder
+
+Promise example :
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+exaconnect
+  .createClient()
+  .then(client =>
+    Promise.all([
+      client,
+      client.getToken({
+        username: 'me@company.com',
+        password: 'secret'
+      })
+    ])
+  )
+  .then(([client, token]) =>
+    client.createOrderFromPartnerOrder({
+      token: token,
+      order: {
+        reference: 'My first automated order from partner order',
+        partnerOrderId: '327999',
+        comment: '',
+        address: {
+          contactName: 'M. Dupond',
+          line1: '1 Place Georges Frêche',
+          line2: '',
+          line3: '',
+          doorCode: '#3412',
+          mail: 'me@company.com',
+          phone: '0432000000',
+          mobile: '0660000000',
+          city: 'Montpellier',
+          zipCode: '34000',
+          country: 'FR',
+          comment: ''
+        }
+      }
+    })
+  )
+  .then(console.log)
+  .catch(console.error);
+```
+
+async/await exemple :
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+(async () => {
+  const client = await exaconnect.createClient();
+
+  const token = await client.getToken({
+    username: 'me@company.com',
+    password: 'secret'
+  });
+
+  const orderFromPartnerOrder = await client.createOrderFromPartnerOrder({
+    token: token,
+    order: {
+      reference: 'My first automated order from partner order',
+      partnerOrderId: '327999',
+      comment: '',
+      address: {
+        contactName: 'M. Dupond',
+        line1: '1 Place Georges Frêche',
+        line2: '',
+        line3: '',
+        doorCode: '#3412',
+        mail: 'me@company.com',
+        phone: '0432000000',
+        mobile: '0660000000',
+        city: 'Montpellier',
+        zipCode: '34000',
+        country: 'FR',
+        comment: ''
+      }
+    }
+  });
+
+  console.log(orderFromPartnerOrder);
+})().catch(console.error);
+```
+
+#### setOrderStateAsFileTransferred
+
+Promise example :
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+exaconnect
+  .createClient()
+  .then(client =>
+    Promise.all([
+      client,
+      client.getToken({
+        username: 'me@company.com',
+        password: 'secret'
+      })
+    ])
+  )
+  .then(([client, token]) =>
+    client.setOrderStateAsFileTransferred({
+      token: token,
+      orders: [5591277, 5591389]
+    })
+  )
+  .then(console.log)
+  .catch(console.error);
+```
+
+async/await example :
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+(async () => {
+  const client = await exaconnect.createClient();
+
+  const token = await client.getToken({
+    username: 'me@company.com',
+    password: 'secret'
+  });
+
+  const updatedOrders = await client.setOrderStateAsFileTransferred({
+    token: token,
+    orders: [5591277, 5591389]
+  });
+
+  console.log(updatedOrders);
+})().catch(console.error);
+```
+
+#### getOrderStatus
+
+Promise example :
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+exaconnect
+  .createClient()
+  .then(client =>
+    Promise.all([
+      client,
+      client.getToken({
+        username: 'me@company.com',
+        password: 'secret'
+      })
+    ])
+  )
+  .then(([client, token]) =>
+    client.getOrderStatus({
+      token: token,
+      orders: [5591277, 5591389]
+    })
+  )
+  .then(console.log)
+  .catch(console.error);
+```
+
+async/await example :
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+(async () => {
+  const client = await exaconnect.createClient();
+
+  const token = await client.getToken({
+    username: 'me@company.com',
+    password: 'secret'
+  });
+
+  const ordersStatus = await client.getOrderStatus({
+    token: token,
+    orders: [5591277, 5591389]
+  });
+
+  console.log(ordersStatus);
+})().catch(console.error);
+```
+
+#### cancelOrder
+
+Promise example :
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+exaconnect
+  .createClient()
+  .then(client =>
+    Promise.all([
+      client,
+      client.getToken({
+        username: 'me@company.com',
+        password: 'secret'
+      })
+    ])
+  )
+  .then(([client, token]) =>
+    client.cancelOrder({
+      token,
+      order: { orderId: 5591277, reason: 'File error' }
+    })
+  )
+  .then(console.log)
+  .catch(console.error);
+```
+
+async/await example :
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+(async () => {
+  const client = await exaconnect.createClient();
+
+  const token = await client.getToken({
+    username: 'me@company.com',
+    password: 'secret'
+  });
+
+  const cancelledOrder = await client.cancelOrder({
+    token,
+    order: { orderId: 5591277, reason: 'File error' }
+  });
+
+  console.log(cancelledOrder);
 })().catch(console.error);
 ```
 
