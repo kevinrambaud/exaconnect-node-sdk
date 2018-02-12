@@ -13,8 +13,8 @@ Node.js SDK for exaconnect webservice (https://www.exaprint.fr/).
 * [Installation](#installation)
 * [Usage](#usage)
   * [Methods](#methods)
-    * [getToken](#getToken)
-    * [createOrder](#createOrder)
+    * [getToken](#gettoken)
+    * [createOrder](#createorder)
 * [Contributing](#contributing)
 * [License](#license)
 
