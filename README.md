@@ -10,6 +10,14 @@
 
 Node.js SDK for exaconnect webservice (https://www.exaprint.fr/).
 
+* [Installation](#installation)
+* [Usage](#usage)
+  * [Methods](#methods)
+    * [getToken](#getToken)
+    * [createOrder](#createOrder)
+* [Contributing](#contributing)
+* [License](#license)
+
 ## Installation
 
 ```bash
@@ -18,46 +26,135 @@ npm i exaconnect-node-sdk
 
 ## Usage
 
-### Basic examples
+### Methods
 
-Promise style
+#### getToken
+
+Promise example :
 
 ```javascript
 const exaconnect = require('exaconnect-node-sdk');
-
 exaconnect
   .createClient()
   .then(client =>
-    Promise.all([
-      client,
-      client.getToken({ username: 'you@company.com', password: 'secret' })
-    ])
+    client.getToken({
+      username: 'me@company.com',
+      password: 'secret'
+    })
   )
-  .then(([client, token]) =>
-    client.getOrderStatus({ token: token, orders: [502809] })
-  )
-  .then(status => console.log('status:', status))
-  .catch(err => console.error(err));
+  .then(console.log)
+  .catch(console.error);
 ```
 
-async/await style
+async/await example :
 
 ```javascript
 const exaconnect = require('exaconnect-node-sdk');
 
 (async () => {
   const client = await exaconnect.createClient();
+
   const token = await client.getToken({
-    username: 'you@company.com',
+    username: 'me@company.com',
     password: 'secret'
   });
-  const status = await client.getOrderStatus({
-    token: token,
-    orders: [502809]
+
+  console.log(token);
+})().catch(console.error);
+```
+
+#### createOrder
+
+Promise example :
+
+```javascript
+exaconnect
+  .createClient()
+  .then(client =>
+    Promise.all([
+      client,
+      client.getToken({
+        username: 'me@company.com',
+        password: 'secret'
+      })
+    ])
+  )
+  .then(([client, token]) =>
+    client.createOrder({
+      token: token,
+      order: {
+        reference: 'My first automated order',
+        product: '25086',
+        quantity: 100,
+        openedFormatLength: '8.6',
+        openedFormatWidth: '5.4',
+        closedFormatLength: '0',
+        closedFormatWidth: '0',
+        comment: '',
+        address: {
+          contactName: 'M. Dupond',
+          line1: '1 Place Georges Frêche',
+          line2: '',
+          line3: '',
+          doorCode: '#3412',
+          mail: 'me@company.com',
+          phone: '0432000000',
+          mobile: '0660000000',
+          city: 'Montpellier',
+          zipCode: '34000',
+          country: 'FR',
+          comment: ''
+        }
+      }
+    })
+  )
+  .then(console.log)
+  .catch(console.error);
+```
+
+async/await example :
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+(async () => {
+  const client = await exaconnect.createClient();
+
+  const token = await client.getToken({
+    username: 'me@company.com',
+    password: 'secret'
   });
 
-  console.log('status:', status);
-})().catch(err => console.error(err));
+  const order = await client.createOrder({
+    token: token,
+    order: {
+      reference: 'My first automated order',
+      product: '25086',
+      quantity: 100,
+      openedFormatLength: '8.6',
+      openedFormatWidth: '5.4',
+      closedFormatLength: '0',
+      closedFormatWidth: '0',
+      comment: '',
+      address: {
+        contactName: 'M. Dupond',
+        line1: '1 Place Georges Frêche',
+        line2: '',
+        line3: '',
+        doorCode: '#3412',
+        mail: 'me@company.com',
+        phone: '0432000000',
+        mobile: '0660000000',
+        city: 'Montpellier',
+        zipCode: '34000',
+        country: 'FR',
+        comment: ''
+      }
+    }
+  });
+
+  console.log(order);
+})().catch(console.error);
 ```
 
 ## Contributing
