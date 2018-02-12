@@ -3,6 +3,10 @@
   "version": "0.0.1",
   "description": "Exaconnect node.js SDK",
   "main": "index.js",
+  "directories": {
+    "example": "examples",
+    "lib": "lib"
+  },
   "files": ["index.js", "lib/**/*.js", "!lib/**/*.test.js"],
   "scripts": {
     "coverage": "nyc report --reporter=lcovonly",
