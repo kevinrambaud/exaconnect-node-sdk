@@ -188,7 +188,7 @@ exaconnect
       token: token,
       order: {
         reference: 'My first automated order from partner order',
-        partnerOrderId: '327999',
+        partnerOrderId: 327999,
         comment: '',
         address: {
           contactName: 'M. Dupond',
@@ -228,7 +228,7 @@ const exaconnect = require('exaconnect-node-sdk');
     token: token,
     order: {
       reference: 'My first automated order from partner order',
-      partnerOrderId: '327999',
+      partnerOrderId: 327999,
       comment: '',
       address: {
         contactName: 'M. Dupond',
