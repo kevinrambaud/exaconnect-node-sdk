@@ -1,13 +1,17 @@
 {
   "name": "exaconnect-node-sdk",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "description": "Exaconnect node.js SDK",
   "main": "index.js",
   "directories": {
     "example": "examples",
     "lib": "lib"
   },
-  "files": ["index.js", "lib/**/*.js", "!lib/**/*.test.js"],
+  "files": [
+    "index.js",
+    "lib/**/*.js",
+    "!lib/**/*.test.js"
+  ],
   "scripts": {
     "coverage": "nyc report --reporter=lcovonly",
     "lint": "eslint --fix index.js \"lib/**/*.js\"",
@@ -35,8 +39,8 @@
     "eslint-plugin-import": "^2.8.0",
     "husky": "^0.14.3",
     "mocha": "^5.0.0",
-    "nyc": "^11.4.1",
-    "sinon": "^4.2.2"
+    "nyc": "^11.5.0",
+    "sinon": "^4.3.0"
   },
   "dependencies": {
     "joi": "^13.1.2",
