@@ -7,13 +7,9 @@
     "example": "examples",
     "lib": "lib"
   },
-  "files": [
-    "index.js",
-    "lib/**/*.js",
-    "!lib/**/*.test.js"
-  ],
+  "files": ["index.js", "lib/**/*.js", "!lib/**/*.test.js"],
   "scripts": {
-    "coverage": "nyc report --reporter=lcovonly",
+    "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "lint": "eslint --fix index.js \"lib/**/*.js\"",
     "precommit": "npm run lint && npm run test",
     "test": "nyc mocha \"lib/**/*.test.js\""
@@ -34,6 +30,7 @@
   "devDependencies": {
     "chai": "^4.1.2",
     "chai-as-promised": "^7.1.1",
+    "codecov": "^3.0.0",
     "eslint": "^4.17.0",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-import": "^2.8.0",
