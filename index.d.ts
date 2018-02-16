@@ -126,7 +126,7 @@ export interface IClient {
 
   setOrderStateAsFileTransferred(
     request: ISetOrderStateAsFileTransferredRequest,
-  ): Promise<ISetOrderStateAsFileTransferredResponse>;
+  ): Promise<ISetOrderStateAsFileTransferredResponse[]>;
 }
 
 export let configuration: IConfiguration;
