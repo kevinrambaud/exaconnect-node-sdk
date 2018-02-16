@@ -1,8 +1,9 @@
 {
   "name": "exaconnect-node-sdk",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Exaconnect node.js SDK",
   "main": "index.js",
+  "types": "index.d.ts",
   "directories": {
     "example": "examples",
     "lib": "lib"
