@@ -1,6 +1,6 @@
 {
   "name": "exaconnect-node-sdk",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Exaconnect node.js SDK",
   "main": "index.js",
   "types": "index.d.ts",
@@ -8,7 +8,11 @@
     "example": "examples",
     "lib": "lib"
   },
-  "files": ["index.js", "lib/**/*.js", "!lib/**/*.test.js"],
+  "files": [
+    "index.js",
+    "lib/**/*.js",
+    "!lib/**/*.test.js"
+  ],
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "lint": "eslint --fix index.js \"lib/**/*.js\"",
