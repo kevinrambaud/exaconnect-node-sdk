@@ -1,4 +1,4 @@
-// Type definitions for exaconnect-node-sdk 1.0.2
+// Type definitions for exaconnect-node-sdk
 // Project: exaconnect-node-sdk
 // Definitions by: Kevin Rambaud <https://twitter.com/kevinrambaud>
 
