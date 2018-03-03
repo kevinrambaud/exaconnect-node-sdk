@@ -4,7 +4,6 @@
 [![codecov](https://codecov.io/gh/kevinrambaud/exaconnect-node-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/kevinrambaud/exaconnect-node-sdk)
 [![npm](https://img.shields.io/npm/v/exaconnect-node-sdk.svg)](https://www.npmjs.com/package/exaconnect-node-sdk)
 [![npm](https://img.shields.io/npm/dt/exaconnect-node-sdk.svg)](https://www.npmjs.com/package/exaconnect-node-sdk)
-[![Known Vulnerabilities](https://snyk.io/test/github/kevinrambaud/exaconnect-node-sdk/badge.svg?targetFile=package.json)](https://snyk.io/test/github/kevinrambaud/exaconnect-node-sdk?targetFile=package.json)
 [![Styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![MIT licensed](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/kevinrambaud/exaconnect-node-sdk/master/LICENSE)
 
