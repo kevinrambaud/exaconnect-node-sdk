@@ -30,6 +30,22 @@ npm i exaconnect-node-sdk
 
 ## Usage
 
+By default, a production configuration is setup and and exempts you to use the `configure` method, but if you feel the need to use a custom configuration, you can still use the method as the example below.
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+exaconnect.configure({
+  schema: 'http',
+  hostname: 'stg-connect.exaprint.fr'
+});
+
+exaconnect
+  .createClient()
+  .then(console.log)
+  .catch(console.error);
+```
+
 ### Methods
 
 #### getToken
