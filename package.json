@@ -1,6 +1,6 @@
 {
   "name": "exaconnect-node-sdk",
-  "version": "1.0.19",
+  "version": "1.0.20",
   "description": "Exaconnect node.js SDK",
   "main": "index.js",
   "types": "index.d.ts",
@@ -8,7 +8,11 @@
     "example": "example",
     "lib": "lib"
   },
-  "files": ["index.js", "lib/**/*.js", "!lib/**/*.test.js"],
+  "files": [
+    "index.js",
+    "lib/**/*.js",
+    "!lib/**/*.test.js"
+  ],
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "precommit": "npm test",
@@ -19,8 +23,7 @@
     "type": "git",
     "url": "git+https://github.com/kevinrambaud/exaconnect-node-sdk.git"
   },
-  "author":
-    "Kevin Rambaud <kevin.rambaud@gmail.com> (https://twitter.com/kevinrambaud)",
+  "author": "Kevin Rambaud <kevin.rambaud@gmail.com> (https://twitter.com/kevinrambaud)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kevinrambaud/exaconnect-node-sdk/issues"
@@ -49,8 +52,13 @@
   "eslintConfig": {
     "extends": "kevinrambaud"
   },
-  "eslintIgnore": ["example"],
+  "eslintIgnore": [
+    "example"
+  ],
   "lint-staged": {
-    "*.js": ["eslint --fix", "git add"]
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
   }
 }
