@@ -418,15 +418,15 @@ const exaconnect = require('exaconnect-node-sdk');
 
 ## More examples
 
-You can find more examples in the `examples` directory of this repository.
+You can find more examples in the `example` directory of this repository.
 
 ## Contributing
 
-1. Fork it!
-2. Create your feature branch: `git checkout -b my-new-feature`
-3. Commit your changes: `git commit -am 'Add some feature'`
-4. Push to the branch: `git push origin my-new-feature`
-5. Submit a pull request
+1.  Fork it!
+2.  Create your feature branch: `git checkout -b my-new-feature`
+3.  Commit your changes: `git commit -am 'Add some feature'`
+4.  Push to the branch: `git push origin my-new-feature`
+5.  Submit a pull request
 
 ## License
 

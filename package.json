@@ -5,25 +5,22 @@
   "main": "index.js",
   "types": "index.d.ts",
   "directories": {
-    "example": "examples",
+    "example": "example",
     "lib": "lib"
   },
-  "files": [
-    "index.js",
-    "lib/**/*.js",
-    "!lib/**/*.test.js"
-  ],
+  "files": ["index.js", "lib/**/*.js", "!lib/**/*.test.js"],
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
-    "lint": "eslint --fix index.js \"lib/**/*.js\"",
-    "precommit": "npm run lint && npm run test",
+    "precommit": "npm test",
+    "pretest": "eslint --fix index.js \"lib/**/*.js\"",
     "test": "nyc mocha --timeout 5000 \"lib/**/*.test.js\""
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kevinrambaud/exaconnect-node-sdk.git"
   },
-  "author": "Kevin Rambaud <kevin.rambaud@gmail.com> (https://twitter.com/kevinrambaud)",
+  "author":
+    "Kevin Rambaud <kevin.rambaud@gmail.com> (https://twitter.com/kevinrambaud)",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/kevinrambaud/exaconnect-node-sdk/issues"
@@ -37,9 +34,9 @@
     "chai-as-promised": "^7.1.1",
     "codecov": "^3.0.0",
     "eslint": "^4.18.1",
-    "eslint-config-airbnb-base": "^12.1.0",
-    "eslint-plugin-import": "^2.8.0",
+    "eslint-config-kevinrambaud": "^1.0.1",
     "husky": "^0.14.3",
+    "lint-staged": "^7.0.2",
     "mocha": "^5.0.1",
     "nyc": "^11.5.0",
     "sinon": "^5.0.0"
@@ -48,5 +45,12 @@
     "joi": "^13.1.2",
     "soap": "^0.23.0",
     "soap-cookie": "^0.10.1"
+  },
+  "eslintConfig": {
+    "extends": "kevinrambaud"
+  },
+  "eslintIgnore": ["example"],
+  "lint-staged": {
+    "*.js": ["eslint --fix", "git add"]
   }
 }
