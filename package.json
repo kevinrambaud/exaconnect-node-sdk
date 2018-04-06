@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "joi": "^13.1.2",
-    "soap": "^0.23.0",
+    "soap": "^0.24.0",
     "soap-cookie": "^0.10.1"
   },
   "eslintConfig": {
