@@ -1,6 +1,6 @@
 {
   "name": "exaconnect-node-sdk",
-  "version": "1.0.27",
+  "version": "1.0.28",
   "description": "Exaconnect node.js SDK",
   "main": "index.js",
   "types": "index.d.ts",
