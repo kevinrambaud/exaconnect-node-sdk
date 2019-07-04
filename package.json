@@ -16,7 +16,9 @@
   "scripts": {
     "coverage": "nyc report --reporter=text-lcov > coverage.lcov && codecov",
     "pretest": "eslint --fix index.js \"lib/**/*.js\"",
-    "test": "nyc mocha --timeout 5000 \"lib/**/*.test.js\""
+    "test": "nyc mocha --timeout 5000 \"lib/**/*.test.js\"",
+    "snyk-protect": "snyk protect",
+    "prepare": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -46,7 +48,8 @@
   "dependencies": {
     "joi": "^14.0.0",
     "soap": "^0.28.0",
-    "soap-cookie": "^0.10.1"
+    "soap-cookie": "^0.10.1",
+    "snyk": "^1.189.0"
   },
   "eslintConfig": {
     "extends": "kevinrambaud"
@@ -64,5 +67,6 @@
       "eslint --fix",
       "git add"
     ]
-  }
+  },
+  "snyk": true
 }
