@@ -43,7 +43,7 @@
     "lint-staged": "^9.0.1",
     "mocha": "^6.0.0",
     "nyc": "^14.0.0",
-    "sinon": "^7.0.0"
+    "sinon": "^8.0.0"
   },
   "dependencies": {
     "joi": "^14.0.0",
