@@ -1,6 +1,6 @@
 {
   "name": "exaconnect-node-sdk",
-  "version": "1.0.40",
+  "version": "2.0.0",
   "description": "Exaconnect node.js SDK",
   "main": "index.js",
   "types": "index.d.ts",
@@ -31,7 +31,7 @@
   },
   "homepage": "https://github.com/kevinrambaud/exaconnect-node-sdk#readme",
   "engines": {
-    "node": ">=6.10"
+    "node": ">=10"
   },
   "devDependencies": {
     "chai": "^4.1.2",
