@@ -1,6 +1,6 @@
 # exaconnect-node-sdk
 
-[![github actions](https://img.shields.io/github/workflow/status/kevinrambaud/exaconnect-node-sdk/Node CI?logo=github)](https://github.com/kevinrambaud/exaconnect-node-sdk/actions?query=workflow%3A%22Node+CI%22)
+[![actions](https://img.shields.io/github/workflow/status/kevinrambaud/exaconnect-node-sdk/Node%20CI?logo=github)](https://github.com/kevinrambaud/exaconnect-node-sdk/actions?query=workflow%3A%22Node+CI%22)
 [![codecov](https://codecov.io/gh/kevinrambaud/exaconnect-node-sdk/branch/master/graph/badge.svg)](https://codecov.io/gh/kevinrambaud/exaconnect-node-sdk)
 [![npm](https://img.shields.io/npm/v/exaconnect-node-sdk.svg)](https://www.npmjs.com/package/exaconnect-node-sdk)
 [![npm](https://img.shields.io/npm/dt/exaconnect-node-sdk.svg)](https://www.npmjs.com/package/exaconnect-node-sdk)
