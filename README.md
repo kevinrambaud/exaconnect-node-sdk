@@ -314,6 +314,62 @@ const exaconnect = require('exaconnect-node-sdk');
 })().catch(console.error);
 ```
 
+#### getOrders
+
+Promise example :
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+exaconnect
+  .createClient()
+  .then(client =>
+    Promise.all([
+      client,
+      client.getToken({
+        username: 'me@company.com',
+        password: 'secret'
+      })
+    ])
+  )
+  .then(([client, token]) =>
+    client.getOrders({
+      token: token,
+      dateFilterMin: '20200101',
+      dateFilterMax: '20200101',
+      statusFilter: 24,
+      page: 1
+    })
+  )
+  .then(console.log)
+  .catch(console.error);
+```
+
+async/await example :
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+(async () => {
+  const client = await exaconnect.createClient();
+
+  const token = await client.getToken({
+    username: 'me@company.com',
+    password: 'secret'
+  });
+
+  const ordersStatus = await client.getOrderStatus({
+    token: token,
+    dateFilterMin: '20200101',
+    dateFilterMax: '20200101',
+    statusFilter: 24,
+    page: 1
+  });
+
+  console.log(ordersStatus);
+})().catch(console.error);
+```
+
 #### getOrderStatus
 
 Promise example :
