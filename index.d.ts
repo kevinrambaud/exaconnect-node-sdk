@@ -101,6 +101,26 @@ export interface IGetOrderStatusResponse {
   orderId: number;
 }
 
+export interface IGetOrdersRequest {
+  token: string;
+  dateFilterMin: string;
+  dateFilterMax: string;
+  statusFilter: number;
+  page: number;
+
+}
+
+export interface IGetOrders {
+  id: number;
+  status: number;
+}
+
+export interface IGetOrdersResponse {
+  orders: IGetOrders[];
+  page: number;
+  remainingRecords: boolean;
+}
+
 export interface ISetOrderStateAsFileTransferredRequest {
   token: string;
   orders: number[];
@@ -121,6 +141,8 @@ export interface IClient {
   ): Promise<ICreateOrderFromPartnerOrderResponse>;
 
   getOrderStatus(request: IGetOrderStatusRequest): Promise<IGetOrderStatusResponse[]>;
+
+  getOrders(request: IGetOrdersRequest): Promise<IGetOrdersResponse>;
 
   getToken(request: IGetTokenRequest): Promise<string>;
 
