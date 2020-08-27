@@ -14,6 +14,7 @@ Node.js SDK for exaconnect webservice (https://www.exaprint.fr/).
     * [createOrder](#createorder)
     * [createOrderFromPartnerOrder](#createorderfrompartnerorder)
     * [setOrderStateAsFileTransferred](#setorderstateasfiletransferred)
+    * [getOrders](#getorders)
     * [getOrderStatus](#getorderstatus)
     * [cancelOrder](#cancelorder)
 * [More examples](#more-examples)
@@ -336,7 +337,7 @@ exaconnect
     client.getOrders({
       token: token,
       dateFilterMin: '20200101',
-      dateFilterMax: '20200101',
+      dateFilterMax: '20200701',
       statusFilter: 24,
       page: 1
     })
@@ -358,15 +359,15 @@ const exaconnect = require('exaconnect-node-sdk');
     password: 'secret'
   });
 
-  const ordersStatus = await client.getOrderStatus({
+  const orders = await client.getOrders({
     token: token,
     dateFilterMin: '20200101',
-    dateFilterMax: '20200101',
+    dateFilterMax: '20200701',
     statusFilter: 24,
     page: 1
   });
 
-  console.log(ordersStatus);
+  console.log(orders);
 })().catch(console.error);
 ```
 
