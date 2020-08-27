@@ -89,7 +89,7 @@ export interface ICreateOrderFromPartnerOrderRequest {
   };
 }
 
-export interface ICreateOrderFromPartnerOrderResponse extends ICreateOrderResponse {}
+export interface ICreateOrderFromPartnerOrderResponse extends ICreateOrderResponse { }
 
 export interface IGetOrderStatusRequest {
   token: string;
@@ -110,13 +110,13 @@ export interface IGetOrdersRequest {
 
 }
 
-export interface IGetOrders {
+export interface IGetOrder {
   id: number;
   status: number;
 }
 
 export interface IGetOrdersResponse {
-  orders: IGetOrders[];
+  orders: IGetOrder[];
   page: number;
   remainingRecords: boolean;
 }
