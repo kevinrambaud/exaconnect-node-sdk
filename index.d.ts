@@ -103,10 +103,10 @@ export interface IGetOrderStatusResponse {
 
 export interface IGetOrdersRequest {
   token: string;
-  dateFilterMin: string;
-  dateFilterMax: string;
-  statusFilter: number;
-  page: number;
+  dateFilterMin?: string;
+  dateFilterMax?: string;
+  statusFilter?: number;
+  page?: number;
 
 }
 
