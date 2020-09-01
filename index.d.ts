@@ -107,12 +107,12 @@ export interface IGetOrdersRequest {
   dateFilterMax?: string;
   statusFilter?: number;
   page?: number;
-
 }
 
 export interface IGetOrder {
   id: number;
   status: number;
+  customerReference: string
 }
 
 export interface IGetOrdersResponse {
