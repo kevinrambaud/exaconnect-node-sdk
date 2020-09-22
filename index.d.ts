@@ -89,7 +89,7 @@ export interface ICreateOrderFromPartnerOrderRequest {
   };
 }
 
-export interface ICreateOrderFromPartnerOrderResponse extends ICreateOrderResponse {}
+export interface ICreateOrderFromPartnerOrderResponse extends ICreateOrderResponse { }
 
 export interface IGetOrderStatusRequest {
   token: string;
@@ -99,6 +99,26 @@ export interface IGetOrderStatusRequest {
 export interface IGetOrderStatusResponse {
   code: number;
   orderId: number;
+}
+
+export interface IOrderSummary {
+  id: number;
+  status: number;
+  customerReference: string
+}
+
+export interface IGetOrdersRequest {
+  token: string;
+  dateFilterMin?: string;
+  dateFilterMax?: string;
+  statusFilter?: number;
+  page?: number;
+}
+
+export interface IGetOrdersResponse {
+  orders: IOrderSummary[];
+  page: number;
+  remainingRecords: boolean;
 }
 
 export interface ISetOrderStateAsFileTransferredRequest {
@@ -121,6 +141,8 @@ export interface IClient {
   ): Promise<ICreateOrderFromPartnerOrderResponse>;
 
   getOrderStatus(request: IGetOrderStatusRequest): Promise<IGetOrderStatusResponse[]>;
+
+  getOrders(request: IGetOrdersRequest): Promise<IGetOrdersResponse>;
 
   getToken(request: IGetTokenRequest): Promise<string>;
 

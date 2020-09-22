@@ -14,6 +14,7 @@ Node.js SDK for exaconnect webservice (https://www.exaprint.fr/).
     * [createOrder](#createorder)
     * [createOrderFromPartnerOrder](#createorderfrompartnerorder)
     * [setOrderStateAsFileTransferred](#setorderstateasfiletransferred)
+    * [getOrders](#getorders)
     * [getOrderStatus](#getorderstatus)
     * [cancelOrder](#cancelorder)
 * [More examples](#more-examples)
@@ -311,6 +312,62 @@ const exaconnect = require('exaconnect-node-sdk');
   });
 
   console.log(updatedOrders);
+})().catch(console.error);
+```
+
+#### getOrders
+
+Promise example :
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+exaconnect
+  .createClient()
+  .then(client =>
+    Promise.all([
+      client,
+      client.getToken({
+        username: 'me@company.com',
+        password: 'secret'
+      })
+    ])
+  )
+  .then(([client, token]) =>
+    client.getOrders({
+      token: token,
+      dateFilterMin: '20200101',
+      dateFilterMax: '20200701',
+      statusFilter: 24,
+      page: 1
+    })
+  )
+  .then(console.log)
+  .catch(console.error);
+```
+
+async/await example :
+
+```javascript
+const exaconnect = require('exaconnect-node-sdk');
+
+(async () => {
+  const client = await exaconnect.createClient();
+
+  const token = await client.getToken({
+    username: 'me@company.com',
+    password: 'secret'
+  });
+
+  const orders = await client.getOrders({
+    token: token,
+    dateFilterMin: '20200101',
+    dateFilterMax: '20200701',
+    statusFilter: 24,
+    page: 1
+  });
+
+  console.log(orders);
 })().catch(console.error);
 ```
 
