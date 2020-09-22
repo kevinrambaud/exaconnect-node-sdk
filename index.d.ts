@@ -101,6 +101,12 @@ export interface IGetOrderStatusResponse {
   orderId: number;
 }
 
+export interface IOrderSummary {
+  id: number;
+  status: number;
+  customerReference: string
+}
+
 export interface IGetOrdersRequest {
   token: string;
   dateFilterMin?: string;
@@ -109,14 +115,8 @@ export interface IGetOrdersRequest {
   page?: number;
 }
 
-export interface IGetOrder {
-  id: number;
-  status: number;
-  customerReference: string
-}
-
 export interface IGetOrdersResponse {
-  orders: IGetOrder[];
+  orders: IOrderSummary[];
   page: number;
   remainingRecords: boolean;
 }
