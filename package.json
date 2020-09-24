@@ -1,6 +1,6 @@
 {
   "name": "exaconnect-node-sdk",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Exaconnect node.js SDK",
   "main": "index.js",
   "types": "index.d.ts",
@@ -10,6 +10,7 @@
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "lib/**/*.js",
     "!lib/**/*.test.js"
   ],
